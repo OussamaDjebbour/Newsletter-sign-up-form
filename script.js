@@ -13,10 +13,10 @@ const tomatoColor = "hsl(4, 100%, 67%)";
 
 const errDisplay = function (targetInput) {
   console.log("targettt", targetInput.value);
+  errMessage.classList.remove("hidden");
   targetInput.style.color = tomatoColor;
   targetInput.style.borderColor = tomatoColor;
   targetInput.style.backgroundColor = "hsla(4, 100%, 67%,0.1)";
-  errMessage.classList.remove("hidden");
 };
 
 const showAndHideContainers = function () {
