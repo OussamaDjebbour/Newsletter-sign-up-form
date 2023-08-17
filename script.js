@@ -12,7 +12,6 @@ const regExp = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 const tomatoColor = "hsl(4, 100%, 67%)";
 
 const errDisplay = function (targetInput) {
-  console.log("targettt", targetInput.value);
   errMessage.classList.remove("hidden");
   targetInput.style.color = tomatoColor;
   targetInput.style.borderColor = tomatoColor;
@@ -25,13 +24,7 @@ const showAndHideContainers = function () {
 };
 
 const validation = function (e) {
-  //   if (input.value.trim() === "") {
-  //     errDisplay("Whoops! It looks like you forgot to add your email");
-  //     return;
-  //   }
   const input = e.target.querySelector('[type="text"]');
-  console.log(input);
-  console.log(regExp.test(input.value.trim()));
 
   if (!regExp.test(input.value.trim())) {
     errDisplay(input);
@@ -40,7 +33,7 @@ const validation = function (e) {
 
   showAndHideContainers();
   successEmailContent.textContent = input.value;
-  // input.value = "";
+  input.value = "";
 };
 
 form.addEventListener("submit", function (e) {
